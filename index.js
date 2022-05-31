@@ -3,7 +3,9 @@ const expressModule = require("express");
 const app = expressModule();
 app.use(expressModule.json());
 const Joi = require("joi");
+
 const cors = require("cors");
+app.use(cors());
 app.options("/getimages", cors());
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
