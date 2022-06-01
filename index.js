@@ -13,6 +13,7 @@ app.use(function (req, res, next) {
   );
   next();
 });
+app.use(cors());
 app.options("/getimages", cors());
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -123,7 +124,7 @@ app.post("/signup", (req, res) => {
   */
   res.send("Sign Up successful");
 });
-app.listen(3000 || process.env.PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server started ! Listining at port 3000");
 });
 function validate_signup(params) {
